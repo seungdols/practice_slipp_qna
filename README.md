@@ -25,3 +25,40 @@
 * sourcetree에 저장소 추가 
 * github에 소스 코드 추가
 
+#### 1-4 원격 서버에 유저 생성 하기 
+
+1. 우분투 환경에서 셋팅 하도록 한다. 
+2. 유저가 root만 존재하다면, 새로 생성 한다. 
+3. 생성한 유저에 sudo 권한을 설정 한다.
+ 
+#### 1-5 원격 서버에 환경 셋팅 하기 
+
+**jdk 설치**
+ * `wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz`
+ 
+**.gz 압축풀기** 
+ * `gunzip jdk-8u101-linux-x64.tar.gz`
+**.tar 풀기**
+ * `tar -xvf jdk-8u101-linux-x64.tar` 
+* `ln -s jdk 디렉토리명 링크명` 이 명령어를 통해 심볼릭 링크를 만든다. 
+
+#### .bash_profile에 패쓰 추가 
+
+```bash
+JAVA_HOME=/home/seungdols/java_home
+PATH=$PATH:$JAVA_HOME/bin
+```
+
+* maven 설치 필요 없이 git repository를 clone 받는다. 
+
+* `./mvnw clean package`를 통해 빌드를 한다.
+
+**서버 실행**
+
+* `cd /target`이동
+
+* `java -jar my-slipp.jar(file name) [&]`
+ * `&`는 붙이면 데몬으로 서버가 동작하게 된다.*
+  
+
+
