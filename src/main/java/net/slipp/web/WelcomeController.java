@@ -6,10 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WelcomeController {
-	@GetMapping("/helloworld")
-	public String welcome(String name, int age ,Model model){
-		model.addAttribute("name", name);
-		model.addAttribute("age", age);
-		return "welcome";
+	@GetMapping("/")
+	public String welcome(){
+		return "index";
+	}
+	@GetMapping("/form")
+	public String form(){
+		return "form";
 	}
 }
