@@ -1,5 +1,7 @@
 package net.slipp.domain;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  * @PROJECT practice_slipp_qna
  * @PACKAGE_NAME net.slipp.domain
@@ -8,5 +10,6 @@ package net.slipp.domain;
  * @DISCRIPT
  * @HISTORY
  */
-public interface UserRepository {
+public interface UserRepository extends JpaRepository<User, Long>{
+
 }
